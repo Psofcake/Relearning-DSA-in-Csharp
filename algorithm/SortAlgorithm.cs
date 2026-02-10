@@ -12,7 +12,7 @@ namespace algorithm
         internal void BubbleSort(int[] arr)
         {
             for (int i = 0; i < arr.Length-1; i++) {
-                for (int j = 0; j < arr.Length-1; j++) {
+                for (int j = 0; j < arr.Length-i-1; j++) {
                     if (arr[j] > arr[j + 1]) //오름차순 정렬 시 조건
                     {
                         //인접 요소의 값을 서로 교환
@@ -23,6 +23,17 @@ namespace algorithm
                 }
             }
         }
+        // ★ j의 범위를 arr.Length -i -1로 하는 이유
+        // 한 바퀴 (i = 0)를 돌면
+        //→ 가장 큰 값이 맨 뒤로 이동해서 자리가 확정됨
+
+        // 두 바퀴(i = 1)를 돌면
+        //→ 뒤에서 두 번째 값도 확정됨
+        //…
+
+        //즉, i번 반복 후에는 뒤쪽 i개의 값은 이미 정렬 완료되어있으므로
+        //이미 확정된 영역을 건너뛰기 위해 -i를 한다.
+
 
         //퀵정렬 : 피벗을 이용한 분할 정복 전략, 평균 O(n log n)
         //left는 정렬을 시작할 첫 인덱스(0), right는 정렬을 끝낼 마지막 인덱스(arr.Length-1)를 넣는다. 부분 정렬도 가능
