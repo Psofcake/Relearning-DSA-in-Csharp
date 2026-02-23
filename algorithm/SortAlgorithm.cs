@@ -104,6 +104,7 @@ namespace algorithm
             int[] arr = { 5, 3, 8, 4, 2 };
 
             MergeSort(arr, 0, arr.Length - 1);
+            Console.Write(string.Join(" ", arr));
         }
     }
 }

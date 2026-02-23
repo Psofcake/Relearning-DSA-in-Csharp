@@ -21,6 +21,7 @@ namespace algorithm
          * 제네릭을 활용한 List<T> 클래스는 지정된 유형의 리스트를 생성할 수 있다.
          */
         
+        /*
         static void Main(string[] args)
         {
             //배열
@@ -53,6 +54,6 @@ namespace algorithm
             numberSet.Add(1);
             numberSet.Add(2);
             numberSet.Add(1); //동일한 값은 중복으로 추가되지 않음.(고유성이 중요한 경우 적합)
-        }
+        }*/
     }
 }
