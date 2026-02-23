@@ -66,5 +66,44 @@ namespace algorithm
             if (i < right)
                 QuickSort(arr, i, right);
         }
+
+        //병합 정렬 : 작은 그룹으로 나누고 정렬한 뒤, 다시 병합 O(n log n)
+        internal static void MergeSort(int[] arr, int left, int right)
+        {
+            if (left >= right) return;
+
+            int mid=(left+right)/2;
+                
+            MergeSort(arr,left, mid);
+            MergeSort(arr, mid+1, right);
+            Merge(arr, left, mid, right);
+        }
+        internal static void Merge(int[] arr, int left, int mid, int right)
+        {
+            int[] temp = new int[right - left + 1];
+
+            int i = left;
+            int j = mid + 1;
+            int k = 0;
+
+            while (i <= mid && j <= right)
+            {
+                if (arr[i] < arr[j])
+                    temp[k++] = arr[i++];
+                else
+                    temp[k++] = arr[j++];
+            }
+            while (i<= mid) temp[k++] = arr[i++];
+            while (j<= right) temp[k++]= arr[j++];
+
+            for(int t=0; t<temp.Length; t++) arr[left+t]=temp[t];
+        }
+        
+        static void Main(string[] args)
+        {
+            int[] arr = { 5, 3, 8, 4, 2 };
+
+            MergeSort(arr, 0, arr.Length - 1);
+        }
     }
 }
