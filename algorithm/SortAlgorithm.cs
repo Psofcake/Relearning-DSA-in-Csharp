@@ -99,12 +99,12 @@ namespace algorithm
             for(int t=0; t<temp.Length; t++) arr[left+t]=temp[t];
         }
         
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             int[] arr = { 5, 3, 8, 4, 2 };
 
             MergeSort(arr, 0, arr.Length - 1);
             Console.Write(string.Join(" ", arr));
-        }
+        }*/
     }
 }
